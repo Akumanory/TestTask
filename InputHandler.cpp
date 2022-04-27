@@ -55,14 +55,17 @@ void InputHandler::HandleInput()
                 break;
 
             case 2:
+                // filter
                 HandleFilter();
                 break;
 
             case 3:
+                // buy_car
                 HandleCarBuying();
                 break;
 
             case 4:
+                // owned_car
                 if (m_person.m_owned_car != nullptr)
                 {
                     std::cout << "Owned car information:" << std::endl;
@@ -107,7 +110,6 @@ void InputHandler::HandleFilter()
 
     while(true)
     {
-        // wait for field to be typed
         if (std::getline(std::cin, m_input_buffer))
         {
             auto search = m_fields_list.find(m_input_buffer);
@@ -137,7 +139,6 @@ void InputHandler::HandleCompare(const std::string& field)
 
     while(true)
     {
-        // wait for compare param to be typed
         if (std::getline(std::cin, m_input_buffer))
         {
             auto search = m_compare_list.find(m_input_buffer);

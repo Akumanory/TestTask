@@ -9,13 +9,13 @@ public:
     Car(int speed = 0, double cost = 0.0);
     ~Car();
 
-    // move constructor
     Car(Car&& car) = default;
     Car(const Car& car) = default;
 
-    const int& GetSpeed() const;
+    const int&    GetID() const;
+    const int&    GetSpeed() const;
     const double& GetCost() const;
-    const int& GetID() const;
+
 
     void PrintInfo();
 

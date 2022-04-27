@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 #include <unordered_map>
 
 struct TextAndId

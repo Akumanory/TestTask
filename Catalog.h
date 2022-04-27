@@ -1,15 +1,11 @@
 #pragma once
 
-#include <vector>
 #include <unordered_map>
 #include <memory>
-#include <algorithm>
-// #include <type_traits>
 
 #include "Car.h"
 #include "Person.h"
 
-// template<typename T>
 class Catalog
 {
 friend class InputHandler;
@@ -25,7 +21,6 @@ public:
     template <typename ...Args>
     void AddToCatalogByArgs(Args && ...args)
     {
-        // m_catalog.emplace_back(std::forward<Args>(args)...);
         m_catalog.emplace(
             std::piecewise_construct,
             std::forward_as_tuple(Car::m_car_total),
@@ -51,7 +46,6 @@ public:
 private:
 
     bool comp(const Car& car);
-    // std::vector<std::shared_ptr<Car>> m_catalog;
     std::unordered_map<int, const std::shared_ptr<Car>> m_catalog;
 };
 

@@ -16,7 +16,6 @@ void Catalog::AddToCatalog(const Car& car)
             std::make_shared<Car>(car)
             )
         );
-    // m_catalog.push_back(std::make_shared<Car>(car));
 }
 
 const std::unordered_map<int, const std::shared_ptr<Car>>& Catalog::GetAllCarsInCatalog()
@@ -30,7 +29,6 @@ bool Catalog::BuyCar(Person& person, const int& id)
 
     if (search != m_catalog.end())
     {
-        // person.m_owned_car = m_catalog.at(id);
         person.m_owned_car = search->second;
         m_catalog.erase(id);
         return true;
